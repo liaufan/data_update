@@ -1,0 +1,35 @@
+{
+    "name": "Lee Rubber Chinese Orchestra",
+    "short_name": "Lee Rubber Chinese Orchestra",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "南益校友会华乐团成立的宗旨乃发扬中华传统文化及传承华族音乐。本团均循着宗旨，广推健康文娱活动如：演奏会、音乐营、生活营、慈善义演及电台录音等，不但深获好评，也对发扬中华文化起了一定的作用，不容置疑。",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

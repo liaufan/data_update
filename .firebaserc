@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "bmsm-6dee6",
+    "main": "bmsm-6dee6",
+    "attendance": "bmsm-6dee6"
+  },
+  "targets": {
+    "bmsm-6dee6": {
+      "hosting": {
+        "main": [
+          "bmsm-6dee6"
+        ]
+      }
+    }
+  }
+}
