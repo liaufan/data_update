@@ -1,3 +1,4 @@
+import 'package:bmsm/ui/main_search_component.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dropdown/awesome_dropdown.dart';
 import 'package:bmsm/ui/attendance.component.dart';
@@ -39,7 +40,7 @@ class Home extends StatelessWidget {
               )),
         ],
       ),
-      body: AttendanceComponent(title: "Title"),
+      body: MainSearchComponent(),
     );
   }
 }

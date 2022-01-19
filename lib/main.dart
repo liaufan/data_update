@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       // debugShowCheckedModeBanner: false,
       getPages: [
         GetPage(name: "/", page: () => Home()),
-        GetPage(name: "/update", page: () => UpdatePage()),
+        // GetPage(name: "/update", page: () => UpdatePage()),
       ],
     );
   }
