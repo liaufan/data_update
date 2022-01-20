@@ -45,6 +45,9 @@ dependencies:
   dio: ^4.0.4
   http: ^0.13.4
   cloud_functions: ^3.2.5
+  auto_size_text: ^3.0.0
+  fluttertoast: ^8.0.8
+  catcher: ^0.6.9
 
 dev_dependencies:
   flutter_test:

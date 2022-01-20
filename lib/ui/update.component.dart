@@ -1,101 +1,128 @@
-// import 'package:dropdown_search/dropdown_search.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:jiffy/jiffy.dart';
-// import 'package:bmsm/controllers/attendance.controller.dart';
-// import 'package:bmsm/controllers/update.controller.dart';
-// import 'package:bmsm/helpers/dropdown.helper.dart';
-// import 'package:horizontal_data_table/horizontal_data_table.dart';
-// import 'package:flutter_switch/flutter_switch.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
+import 'package:bmsm/controllers/update.controller.dart';
 
-// class UpdateComponent extends StatefulWidget {
-//   UpdateComponent({Key? key, required this.title}) : super(key: key);
-//   final String title;
+class UpdateComponent extends StatefulWidget {
+  UpdateComponent({Key? key}) : super(key: key);
 
-//   @override
-//   _UpdateComponentState createState() => _UpdateComponentState();
-// }
+  @override
+  _UpdateComponentState createState() => _UpdateComponentState();
+}
 
-// class _UpdateComponentState extends State<UpdateComponent> {
-//   final UpdateController updateController = Get.find();
-//   HDTRefreshController _hdtRefreshController = HDTRefreshController();
+class _UpdateComponentState extends State<UpdateComponent> {
+  final UpdateController updateController = Get.find();
 
-//   @override
-//   void initState() {
-//     super.initState();
-//   }
+  @override
+  void initState() {
+    super.initState();
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
 
-//     return Column(mainAxisSize: MainAxisSize.min, children: [
-//       Padding(
-//         padding: const EdgeInsets.all(15.0),
-//         child: DropdownSearch<String>(
-//           mode: Mode.DIALOG,
-//           showSearchBox: true,
-//           items: updateController.names,
-//           label: "Name",
-//           hint: "country in menu mode",
-//           onChanged: (value) {
-//             print(value);
-//             updateController.selectedName.value = value ?? "";
-//             updateController.selectName(value ?? "");
-//           },
-//         ),
-//       ),
-//       Obx(() => updateController.attendances.isNotEmpty
-//           ? _getAttendanceSwitchers()
-//           : Container())
-//     ]);
-//   }
-
-//   Widget _getAttendanceSwitchers() {
-//     List<Widget> switches = [];
-//     for (int i = 0; i < updateController.attendances.length; i++) {
-//       switches.add(Obx(() => Padding(
-//             padding: const EdgeInsets.all(10.0),
-//             child: Row(
-//               children: [
-//                 Text(
-//                   Jiffy(updateController.attendances[i].date).yMMMd,
-//                   style: TextStyle(fontFamily: "Helvetica", fontSize: 16),
-//                 ),
-//                 Spacer(),
-//                 FlutterSwitch(
-//                   activeText: "Present",
-//                   inactiveText: "Absent",
-//                   activeColor: Colors.green,
-//                   width: 80.0,
-//                   height: 30.0,
-//                   valueFontSize: 12.0,
-//                   toggleSize: 22.0,
-//                   value: updateController.attendances[i].present.value,
-//                   borderRadius: 30.0,
-//                   padding: 4.0,
-//                   showOnOff: true,
-//                   onToggle: (val) {
-//                     updateController.toggleAttendance(
-//                         updateController.attendances[i].date, val);
-//                     updateController.attendances[i].present.value = val;
-//                   },
-//                 ),
-//               ],
-//             ),
-//           )));
-//     }
-//     return SizedBox(
-//       width: 300,
-//       height: MediaQuery.of(context).size.height * 0.75,
-//       child: SingleChildScrollView(
-//         child: Padding(
-//           padding: const EdgeInsets.all(8.0),
-//           child: Column(
-//             children: switches,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+    return Container(
+      height: size.height * 0.8,
+      child: SingleChildScrollView(
+        child: Column(children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 20.0),
+            child: Text(
+              "Update your information",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 20.0),
+            child: Text(
+              "*All fields are mandatory.",
+              style: TextStyle(
+                  fontSize: 14, color: Colors.red, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Text(updateController.name),
+          Text(updateController.memberId),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: "IC Number",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  border: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  contentPadding: EdgeInsets.all(8),
+                ),
+                cursorColor: Colors.black,
+                onChanged: (value) {
+                  updateController.identification = value;
+                }),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: "Phone",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  border: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  contentPadding: EdgeInsets.all(8),
+                ),
+                cursorColor: Colors.black,
+                onChanged: (value) {
+                  updateController.phone = value;
+                }),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: "Email",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  border: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  contentPadding: EdgeInsets.all(8),
+                ),
+                cursorColor: Colors.black,
+                onChanged: (value) {
+                  updateController.email = value;
+                }),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: "Address",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  border: OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.black)),
+                  contentPadding: EdgeInsets.all(8),
+                ),
+                cursorColor: Colors.black,
+                onChanged: (value) {
+                  updateController.address = value;
+                }),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                updateController.uploadNewInformation();
+                Get.back();
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(title: Text("Information submitted."));
+                    });
+              },
+              child: const Text("Submit"))
+        ]),
+      ),
+    );
+  }
+}

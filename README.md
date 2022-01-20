@@ -1,6 +1,6 @@
 # bmsm
 
-Lee Rubber Chinese Orchestra
+Buddhist Missionary Society Malaysia
 
 ## Getting Started
 

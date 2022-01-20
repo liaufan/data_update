@@ -4,6 +4,7 @@ import 'package:bmsm/ui/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:bmsm/ui/update.page.dart';
 import 'get_bindings.dart';
+import 'package:catcher/catcher.dart';
 
 void main() async {
   await Firebase.initializeApp(
@@ -18,6 +19,22 @@ void main() async {
   );
   GetInitializer().dependencies();
   await Future.delayed(const Duration(milliseconds: 500));
+  CatcherOptions debugOptions =
+      CatcherOptions(PageReportMode(showStackTrace: true), [
+    // EmailAutoHandler(
+    //   "smtp.gmail.com",
+    //   587,
+    //   "d2u.errorreporter@gmail.com",
+    //   "ErrorCatcher",
+    //   "nomoredetectivegame",
+    //   ["liauroufan@doctor2u.my", "adamjuhari@doctor2u.my"],
+    // ),
+  ], localizationOptions: [
+    LocalizationOptions("en",
+        notificationReportModeTitle: "Crash",
+        dialogReportModeAccept: "Send Email")
+  ]);
+  Catcher(rootWidget: const MyApp(), releaseConfig: debugOptions);
   runApp(const MyApp());
 }
 
@@ -28,7 +45,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'BMSM Data Update',
+      title: 'Member Information Check',
       theme: ThemeData(
         primarySwatch: white,
       ),

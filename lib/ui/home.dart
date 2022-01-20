@@ -15,30 +15,28 @@ class Home extends StatelessWidget {
         toolbarHeight: 100,
         backgroundColor: Colors.white,
         centerTitle: false,
-        title: Image.asset(
-          'assets/logos/main.jpg',
-          height: 90,
-        ),
-        actions: <Widget>[
-          TextButton(
-              onPressed: () {},
-              child: const Text(
-                "Eng",
-                style: TextStyle(color: Colors.blue),
-              )),
-          Container(
-            margin: const EdgeInsets.only(top: 30, bottom: 30),
-            height: 5,
-            width: 1,
-            color: Colors.black,
-          ),
-          TextButton(
-              onPressed: () {},
-              child: const Text(
-                "中",
-                style: TextStyle(color: Colors.black),
-              )),
-        ],
+        title: Text("Buddhist Missionary Society Malaysia"),
+
+        // actions: <Widget>[
+        //   TextButton(
+        //       onPressed: () {},
+        //       child: const Text(
+        //         "Eng",
+        //         style: TextStyle(color: Colors.blue),
+        //       )),
+        //   Container(
+        //     margin: const EdgeInsets.only(top: 30, bottom: 30),
+        //     height: 5,
+        //     width: 1,
+        //     color: Colors.black,
+        //   ),
+        //   TextButton(
+        //       onPressed: () {},
+        //       child: const Text(
+        //         "中",
+        //         style: TextStyle(color: Colors.black),
+        //       )),
+        // ],
       ),
       body: MainSearchComponent(),
     );

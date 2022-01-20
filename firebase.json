@@ -1,6 +1,6 @@
 {
-  "hosting": {
-    "site": "attendance-f3b0c",
+  "hosting": [{
+    "target": "bmsm-membership",
     "public": "build/web",
     "ignore": [
       "firebase.json",
@@ -13,5 +13,19 @@
         "destination": "/index.html"
       }
     ]
-  }
+  },{
+    "target": "dataupdate-site",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }]
 }

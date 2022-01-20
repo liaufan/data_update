@@ -1,14 +1,17 @@
 {
   "projects": {
-    "default": "bmsm-6dee6",
-    "main": "bmsm-6dee6",
-    "attendance": "bmsm-6dee6"
+    "default": "dataupdate-site",
+    "main": "dataupdate-site",
+    "attendance": "dataupdate-site"
   },
   "targets": {
-    "bmsm-6dee6": {
+    "dataupdate-site": {
       "hosting": {
-        "main": [
-          "bmsm-6dee6"
+        "bmsm-membership": [
+          "bmsm-membership"
+        ],
+        "dataupdate-site": [
+          "dataupdate-site"
         ]
       }
     }
