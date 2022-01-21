@@ -110,6 +110,11 @@ class _UpdateComponentState extends State<UpdateComponent> {
                   updateController.address = value;
                 }),
           ),
+          const Padding(
+            padding: EdgeInsets.all(25.0),
+            child: Text(
+                "Alternatively, you may email your latest information to info@bmsm.org.my"),
+          ),
           ElevatedButton(
               onPressed: () {
                 updateController.uploadNewInformation();
